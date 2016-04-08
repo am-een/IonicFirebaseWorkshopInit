@@ -1,0 +1,23 @@
+<ion-view title="Sign up">
+  <ion-header-bar class="bar-assertive">
+    <h1 class="title">Sign up</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label assertive">Email</span>
+        <input type="email" placeholder="Email">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label assertive">Password</span>
+        <input type="password" placeholder="Password">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label assertive">Confirm Password</span>
+        <input type="password" placeholder="Confirm Password">
+      </label>
+      <button class="item button button-full button-stable" ng-click="signup()">SIGN ME UP</button>
+      <button class="item button button-full button-clear button-positive" ui-sref="signin">Sign in</button>
+    </div>
+  </ion-content>
+</ion-view>

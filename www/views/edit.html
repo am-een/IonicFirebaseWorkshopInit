@@ -1,0 +1,26 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-assertive">
+    <h1 class="title">Edit a movie</h1>
+    <div class="buttons">
+      <button class="button" ng-click="editModal.hide()"><i class="icon ion-close"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Movie's name</span>
+        <input type="text" placeholder="Movie's name">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Year of production</span>
+        <input type="number" placeholder="Year of production">
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Description</span>
+        <textarea placeholder="Description">
+        </textarea>
+      </label>
+      <button class="button item button-full button-assertive" ng-click="edit()">Edit</button>
+    </div>
+  </ion-content>
+</ion-modal-view>

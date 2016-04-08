@@ -1,0 +1,35 @@
+<ion-view title="My movies">
+  <ion-header-bar class="bar-assertive">
+    <h1 class="title">My movies</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="addModal.show()"><i class="icon ion-plus"></i></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search">
+      </label>
+    </div>
+    <div class="list">
+      <div ng-if="movies.length==0" class="card center item item-text-wrap">
+         <h2 class="assertive">No movies found.</h2>
+         <p>Please click on the plus button in the header-bar to add a movie.</p>
+      </div>
+      <div ng-if="movies.length>0 && movie.uid==getAuth()" class="card item item-text-wrap item-body" ng-repeat="movie in movies | filter:search:strict" ng-class="{'waiting':movie.state==0,'done':movie.state==1}">
+         <h2>{{movie.name | uppercase}}</h2>
+         <p>Year: {{movie.year}}</p>
+         <p>{{movie.description}}</p>
+         <p class="button-bar">
+          <button class="subdued button button-icon icon ion-checkmark" ng-class="{'balanced':movie.state==0,'energized':movie.state==1}" ng-click="changeState(movie)"></button>
+          <button class="subdued button button-icon assertive icon ion-trash-b" ng-click="delete(movie)"></button>
+          <button class="subdued button button-icon energized icon ion-edit" ng-click="openEdit(movie)"></button>
+         </p>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="bar-dark">
+      <button class="button pull-right button-clear" ng-click="logout()">Logout</button>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,11 @@
+/* Empty. Add your own CSS if you like */
+.waiting{
+  border-top: solid 3px #d0b616 !important;
+}
+
+.done{
+  border-top: solid 3px #16d018 !important;
+}
+.center{
+  text-align: center;
+}
